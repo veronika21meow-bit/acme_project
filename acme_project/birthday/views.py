@@ -38,7 +38,7 @@ def birthday_list(request):
     # Получаем список всех объектов с сортировкой по id.
     birthdays = Birthday.objects.order_by('id')
     # Создаём объект пагинатора с количеством 10 записей на страницу.
-    paginator = Paginator(birthdays, 10)
+    paginator = Paginator(birthdays, 3)
 
     # Получаем из запроса значение параметра page.
     page_number = request.GET.get('page')
