@@ -2,7 +2,7 @@
 from django import forms
 
 # Импортируем класс модели Birthday.
-from .models import Birthday
+from .models import Birthday, Congratulation
 
 
 # Для использования формы с моделями меняем класс на forms.ModelForm.
@@ -18,3 +18,10 @@ class BirthdayForm(forms.ModelForm):
         } 
         # Указываем, что надо отобразить все поля.
         fields = '__all__'
+
+
+class CongratulationForm(forms.ModelForm):
+    
+    class Meta:
+        model = Congratulation
+        fields = ('text',) 
